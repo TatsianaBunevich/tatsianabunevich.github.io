@@ -1,0 +1,597 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+// @import "bootstrap/scss/bootstrap";
+
+// Option 2
+//
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+$body-color: #333;
+$body-bg: #fff;
+$border-radius: .4rem;
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+// @import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/input-group"; // Requires forms
+// @import "bootstrap/scss/custom-forms";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/jumbotron";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/media";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/print";
+
+
+//
+// Custom styles
+//
+
+$font-primary: "Karla", arial, sans-serif;
+$font-secondary: "Playfair Display", georgia, serif;
+
+$brand-primary: #4d4d4d !default;
+
+$brand-white: #fff;
+$brand-black: #000;
+$brand-lighter: #727272;
+$brand-selection-color: #b7c2c2;
+$brand-body-color: #fcfcfc;
+$brand-body-bg: #f9f7f7;
+
+
+$input-border-focus: $brand-primary !default;
+$form-group-margin-bottom: 30px !default;
+
+// FONTS
+
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/icomoon.eot?bym34j");
+  src:
+  url("../../fonts/icomoon.eot?bym34j#iefix") format("embedded-opentype"), url("../../fonts/icomoon.ttf?bym34j") format("truetype"), url("../../fonts/icomoon.woff?bym34j") format("woff"), url("../../fonts/icomoon.svg?bym34j#icomoon") format("svg");
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: never;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-npm::before {
+  content: "\e909";
+}
+.icon-gulp::before {
+  content: "\e900";
+}
+.icon-bootstrap::before {
+  content: "\20";
+}
+.icon-sass::before {
+  content: "\e902";
+}
+.icon-react::before {
+  content: "\e903";
+}
+.icon-jquery::before {
+  content: "\e904";
+}
+.icon-node-dot-js::before {
+  content: "\e905";
+}
+.icon-wordpress::before {
+  content: "\e906";
+}
+.icon-css3::before {
+  content: "\e907";
+}
+.icon-html5::before {
+  content: "\e908";
+}
+
+
+// Preloader
+
+$preloader-size: 80px;
+
+.preloader {
+  display: inline-block;
+  position: relative;
+  width: $preloader-size;
+  height: $preloader-size;
+  position: absolute;
+  left: calc(50% - #{$preloader-size}/2);
+  top: calc(50% - #{$preloader-size}/2);
+  &-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $brand-white;
+    z-index: 999999;
+    }
+  div {
+    position: absolute;
+    border: 4px solid $brand-primary;
+    opacity: 1;
+    border-radius: 50%;
+    animation: preloader 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    &:nth-child(2) {
+      animation-delay: -0.5s;
+    }
+  }
+}
+
+@keyframes preloader {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+
+/* =======================================================
+*
+* 	Template Style
+*
+* ======================================================= */
+
+// Template Base
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: lighten($brand-black, 50%);
+  background: lighten($brand-black, 98%);
+}
+.loading {
+  overflow: hidden;
+}
+a {
+  color: $brand-primary;
+  @include transition(.5s);
+  &:hover{
+    color: $brand-primary;
+    text-decoration: underline;
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+p,
+span {
+  font-family: $font-primary;
+  font-weight: 400;
+}
+ul,
+ol{
+  display: block;
+  margin-bottom: 1.5em;
+}
+span{
+  font-size: 18px;
+  color: rgba($brand-lighter, .8);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 30px;
+  font-family: $font-secondary;
+  color: rgba($brand-black, .8);
+}
+
+::selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+}
+
+// Buttons
+.btn {
+  padding: 8px 20px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @include border-radius(1px);
+  @include transition(.5s);
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+.btn-primary {
+  color: $brand-white;
+  background: $brand-primary;
+  border: 2px solid $brand-primary;
+  &:hover,
+  &:focus,
+  &:active {
+    background: lighten($brand-primary, 5%);
+    border-color: lighten($brand-primary, 5%);
+  }
+  &.btn-outline {
+    color: lighten($brand-black, 30%);
+    background: transparent;
+    border: 1px solid lighten($brand-black, 85%);
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brand-white;
+      background: $brand-primary;
+    }
+  }
+}
+
+//CIRCULAR PROGRESS
+
+
+// SECTION
+
+.section {
+  position: relative;
+  padding: 5em 0;
+  clear: both;
+  &:first-of-type {
+    margin-top: 101.2px;
+}
+  img {
+    filter: grayscale(50%);
+  }
+  .row {
+    &:nth-child(2) {
+      @include media-breakpoint-up(md) {
+        margin-top: 7em;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-top: 150px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 10em 0;
+  }
+
+}
+
+//HEADING ROTATION
+.rotate{
+  position: absolute;
+  top: 7px;
+  left: 30px;
+  .heading{
+    position: relative;
+    font-family: $font-primary;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    &::after{
+      position: absolute;
+      top: 8px;
+      right: -40px;
+      width: 40px;
+      height: 1px;
+      content: "";
+      background: $brand-black;
+    }
+  }
+}
+
+// DESC
+.desc{
+  position: relative;
+  padding-left: 4em;
+}
+
+
+// section headings
+h3{
+  line-height: 1.5;
+  span{
+    display: block;
+    margin-bottom: 0;
+    font-family: $font-secondary;
+    font-size: 3.2rem;
+    color: $brand-black;
+    
+  }
+}
+h4{
+  font-size: 2.15rem;
+  span{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: lighten($brand-black, 75%);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+h5 {
+  font-size: 2rem;
+}
+
+.heading-item {
+    @include media-breakpoint-down(sm) { 
+      display: none;
+  }
+}
+
+.bold{
+  font-size: 15vw;
+  font-weight: 700;
+  line-height: 1;
+  color: lighten($brand-black, 94%);
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 200px;
+  }
+
+}
+
+// NAVBAR
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+
+// ---------------------------------------------------
+
+// ABOUT
+
+.logo {
+  display: block;
+  padding: 7px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background: #000;
+  border: 1px solid #000;
+  span {
+    display: block;
+    margin-bottom: 0;
+    line-height: 1.2;
+    color: #fff;
+  }
+}
+
+// ---------------------------------------------------
+
+// SERVICES
+.services{
+  margin-bottom: 4em;
+  h3{
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  ul{
+    li{
+      margin-bottom: 10px;
+      list-style: none;
+      &::before {
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        color: $brand-black;
+        content: "\2022";
+      }
+    }
+  }
+  &-icons {
+    font-size: 32px;
+  }
+}
+
+// EXPERIENCES
+
+.timeline {
+  &-wrapper {
+    position: relative;
+    padding: 22px 0;
+    &::before {
+      position: absolute;
+      left: 25px;
+      width: 2px;
+      height: 100%;
+      content: "";
+      background: $brand-primary;
+    }
+  }
+  &-yr {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: $brand-primary;
+    border-radius: 100%;
+    span {
+      font-size: 12px;
+      color: $brand-white;
+      letter-spacing: .3em;
+    }
+  }
+  &-info {
+    display: inline-block;
+    max-width: 432px;
+    margin-left: 6em;
+    vertical-align: top;
+    small {
+      display: block;
+    }
+  }
+}
+
+//WORK
+.gallery {
+  &-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+  }
+    &-item {
+      flex: 1;
+  height: 100%;
+  filter: grayscale(100%);
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  transition: flex .8s ease, filter .8s linear;
+    &:hover{
+    flex: 7;
+    filter: grayscale(0%);
+    }
+    &-1 {
+      background-image: url("../../images/securebackup.png");
+    }
+   &-2 {
+      background-image: url("../../images/medworkservices.png");
+    }
+    &-3 {
+      background-image: url("../../images/activationproducts_weight-loss.png");
+    }
+    &-4 {
+      background-image: url("../../images/activationproducts_hehealthy-heart.png");
+    }
+    }
+}
+
+// TICKER
+$duration: 10s;
+
+@keyframes ticker {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-400%, 0, 0); }
+}
+
+  .ticker {
+    overflow: hidden;
+  background-color: rgba(#000, .9);
+    &-wrap {
+      display: flex;
+    animation: ticker linear 30s infinite;
+    }
+    &:hover { animation-play-state: paused; }
+    &-item {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      span {
+        margin-bottom: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 34px;
+        font-weight: 300;
+        color: $brand-white;
+        letter-spacing: 1px;
+      }
+    }
+
+  }
+
+
+
+.bi-arrow-up-circle {
+  font-size: 2.5rem;
+}
