@@ -1,0 +1,45 @@
+.works {
+  .gallery {
+    &-wrap {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 50vh;
+    }
+
+    &-item {
+      flex: 1;
+      height: 100%;
+      filter: grayscale(100%);
+      background-repeat: none;
+      background-position: center;
+      background-size: cover;
+      transition: flex .8s ease, filter .8s linear;
+
+      &:hover {
+        flex: 7;
+        filter: grayscale(0%);
+      }
+
+      &-1 {
+        background-image: url("../../images/haltbar.png");
+      }
+
+      &-2 {
+        background-image: url("../../images/securebackup.png");
+      }
+
+      &-3 {
+        background-image: url("../../images/medworkservices.png");
+      }
+
+      &-4 {
+        background-image: url("../../images/activationproducts_weight-loss.png");
+      }
+
+      &-5 {
+        background-image: url("../../images/activationproducts_hehealthy-heart.png");
+      }
+    }
+  }
+}

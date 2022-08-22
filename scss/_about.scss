@@ -1,0 +1,35 @@
+.about {
+  .logo {
+    display: block;
+    padding: 7px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--brand-black);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: var(--brand-black);
+    border: 1px solid var(--brand-black);
+
+    span {
+      display: block;
+      margin-bottom: 0;
+      line-height: 1.2;
+      color: var(--brand-white);
+    }
+  }
+
+  ul {
+    li {
+      padding-left: 20px;
+      margin-bottom: 20px;
+
+      &::marker {
+        width: 1em;
+        margin-left: -1em;
+        color: var(--brand-black);
+        content: "\2022";
+      }
+    }
+  }
+}

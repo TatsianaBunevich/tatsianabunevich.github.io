@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/icomoon.eot?tepg0o");
+  src: url("../../fonts/icomoon.eot?tepg0o#iefix") format("embedded-opentype"), url("../../fonts/icomoon.ttf?tepg0o") format("truetype"), url("../../fonts/icomoon.woff?tepg0o") format("woff"), url("../../fonts/icomoon.svg?tepg0o#icomoon") format("svg");
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: never;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-adobexd::before {
+  content: "\e90d";
+}
+
+.icon-figma::before {
+  content: "\e90c";
+}
+
+.icon-adobephotoshop::before {
+  content: "\e909";
+}
+
+.icon-javascript::before {
+  content: "\e90b";
+}
+
+.icon-wordpress::before {
+  content: "\e90a";
+}
+
+.icon-linkedin::before {
+  content: "\e902";
+}
+
+.icon-css3::before {
+  content: "\e901";
+}
+
+.icon-html5::before {
+  content: "\e900";
+}
+
+.icon-github::before {
+  content: "\e904";
+}
+
+.icon-npm::before {
+  content: "\e905";
+}
+
+.icon-gulp::before {
+  content: "\e906";
+}
+
+.icon-jquery::before {
+  content: "\e907";
+}
+
+.icon-bootstrap::before {
+  content: "\e908";
+}
+
+.icon-sass::before {
+  content: "\e903";
+}

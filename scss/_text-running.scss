@@ -1,0 +1,46 @@
+.text-running {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  min-height: 58px;
+  overflow: hidden;
+  background-color: $body-bg;
+  border-top: 3px solid $body-color;
+  border-bottom: 3px solid $body-color;
+
+  &-inner {
+    white-space: nowrap;
+  }
+
+  span {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 40px;
+    line-height: 40px;
+    animation: moveRightToLeft 30s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    a {
+      margin: 30px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

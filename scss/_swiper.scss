@@ -1,0 +1,23 @@
+.swiper {
+  height: 100vh;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.swiper-backface-hidden {
+
+  .swiper-slide {
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      display: none;
+    }
+  }
+}

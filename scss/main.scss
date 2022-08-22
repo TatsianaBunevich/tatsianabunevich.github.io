@@ -1,0 +1,293 @@
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+// @import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// @import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/input-group"; // Requires forms
+// @import "bootstrap/scss/custom-forms";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/jumbotron";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/media";
+// @import "bootstrap/scss/list-group";
+// @import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+// @import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/print";
+
+@import "icomoon";
+@import "preloader";
+@import "text-running";
+@import "swiper";
+@import "about";
+@import "services";
+@import "experiences";
+@import "works";
+
+//
+// Custom styles
+//
+
+:root {
+  --brand-primary: #4d4d4d;
+  --brand-white: #fff;
+  --brand-black: #000;
+  --brand-lighter: #727272;
+  --brand-selection-color: #b7c2c2;
+  --brand-body-color: #fcfcfc;
+  --brand-body-bg: #f9f7f7;
+}
+
+$font-primary: "Karla", arial, sans-serif;
+$font-secondary: "Playfair Display", georgia, serif;
+
+$brand-black: #000;
+
+// $input-border-focus: var(--brand-primary)  !default;
+// $form-group-margin-bottom: 30px !default;
+
+/* =======================================================
+*
+* 	Template Style
+*
+* ======================================================= */
+
+* {
+  -webkit-touch-callout: none;
+
+  /* prevent callout to copy image, etc when tap to hold */
+  text-size-adjust: none;
+
+  /* prevent webkit from resizing text to fit */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  /* prevent tap highlight color / shadow */
+  user-select: text;
+
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+::selection {
+  color: var(--brand-body-color);
+  background: var(--brand-selection-color);
+}
+
+// Template Base
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: lighten($brand-black, 50%);
+  background: lighten($brand-black, 98%);
+}
+
+.loading {
+  overflow: hidden;
+}
+
+a {
+  color: var(--brand-primary);
+  @include transition(.5s);
+
+  &:hover {
+    color: var(--brand-primary);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+a:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+
+  /* For some Androids */
+}
+
+.btn:active:focus,
+.btn:focus,
+a:focus {
+  outline: none;
+}
+
+input {
+  appearance: none;
+
+  /* for iPhone & iPad */
+}
+
+p,
+span {
+  font-family: $font-primary;
+  font-weight: 400;
+}
+
+ul,
+ol {
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+span {
+  font-size: 18px;
+  color: rgba(var(--brand-lighter), .8);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 30px;
+  font-family: $font-secondary;
+  color: rgba(var(--brand-black), .8);
+}
+
+/* -------------------------------------------------------- */
+.container,
+.container-fluid {
+  min-width: 320px;
+}
+
+/* -------------------------------------------------------- */
+
+// SECTION
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding: 58px 0 0;
+
+  img {
+    filter: grayscale(50%);
+  }
+
+  .row {
+    &:nth-child(2) {
+      @include media-breakpoint-up(md) {
+        margin-top: 7em;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-top: 150px;
+      }
+    }
+  }
+
+}
+
+//HEADING ROTATION
+.rotate {
+  position: absolute;
+  top: 7px;
+  left: 30px;
+
+  .heading {
+    position: relative;
+    font-family: $font-primary;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: -40px;
+      width: 40px;
+      height: 1px;
+      content: "";
+      background: var(--brand-black);
+    }
+  }
+}
+
+// DESCRIPTION
+.desc {
+  position: relative;
+  padding-left: 4em;
+}
+
+
+// SECTION HEADING
+h3 {
+  line-height: 1.5;
+
+  span {
+    display: block;
+    margin-bottom: 0;
+    font-family: $font-secondary;
+    font-size: 3.2rem;
+    color: var(--brand-black);
+  }
+}
+
+h4 {
+  font-size: 2.15rem;
+
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: lighten($brand-black, 75%);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+// BOLD HEADING
+.bold {
+  width: 100%;
+  font-size: 15vw;
+  font-weight: 700;
+  line-height: 1;
+  color: lighten($brand-black, 94%);
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 200px;
+  }
+}
